@@ -58,7 +58,7 @@ export default function Contact() {
               <div id="comments" className="comments">
                 <div className="respond-comment">
                   <form
-                    action="mailto:themesflat@gmail.com"
+                    action="mailto:support@bluedotauto.com"
                     method="post"
                     encType="text/plain"
                     id="loan-calculator"
@@ -148,7 +148,7 @@ export default function Contact() {
                   <div className="box-info">
                     <h5>Infomation:</h5>
                     <p>1-333-345-6868</p>
-                    <p>themesflat@gmail.com</p>
+                    <p>support@bluedotauto.com</p>
                   </div>
                   <div className="box-info">
                     <h5>Opentime:</h5>

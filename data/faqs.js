@@ -47,7 +47,7 @@ export const toggleItems = [
   {
     title: "How can I connect with your sales team for more information?",
     content:
-      "Reach us at (830) 283-5929, email sales@martinez-auto-sales.com, or through the website contact form.",
+      "Reach us at (830) 283-5929, email support@bluedotauto.com, or through the website contact form.",
   },
 ];
 
