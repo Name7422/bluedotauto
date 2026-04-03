@@ -1,0 +1,31 @@
+export function transformCar(car, index) {
+  return {
+    id: car.StockID || String(index),
+    year: car.Year,
+    type: "SUV",
+    title: car.Title,
+    km: car.Mileage || 0,
+    fuelType: "Diesel",
+    transmission: car.Transmission || "Automatic",
+    price: car.Price || 0,
+    location: "N/A",
+    model: car.Model,
+    make: car.Make,
+    body: "Crossover",
+    color: car.ExteriorColor || "Black",
+    cylinder: 4,
+    door: 4,
+    vin: car.VIN || "N/A",
+    engine: car.Engine || "N/A",
+    description: car.Description || "",
+    features: [],
+    authorImage: "/assets/images/author/avt-cm3.jpg",
+    imgSrc: (car.Minio_Images && car.Minio_Images[0]) || "/assets/images/car-list/car2.jpg",
+    images: (car.Minio_Images || []).map((src, idx) => ({
+      src,
+      alt: `${car.Title} - image ${idx + 1}`,
+      width: 615,
+      height: 462,
+    })),
+  };
+}
