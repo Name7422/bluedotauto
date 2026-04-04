@@ -5,6 +5,7 @@ import Overview from "./detailComponents/Overview";
 import CarInfo from "./detailComponents/CarInfo";
 import Recommended from "./detailComponents/Recommended";
 import SidebarToggleButton from "./SidebarToggleButton";
+import ContactUs from "../otherPages/ContactUs";
 export default function CarDetails1({ carItem, recommendedCars = [] }) {
   return (
     <>
@@ -73,7 +74,7 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                         </div>
                         <Overview carItem={carItem} />
                       </div>
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,7 +88,23 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                     <CarInfo carItem={carItem} />
                   </div>
                 </div>
-                
+                <div className="contact-info box-sd mb-40">
+                    <h2 className="mb-30">Contact Us</h2>
+                    <div className="wrap-info">
+                      <div className="box-info">
+                        <h5>Address</h5>
+                        <p>
+                          2330 S Robinson Ave, Oklahoma City, OK 73109 <br />
+                          United States
+                        </p>
+                      </div>
+                      <div className="box-info">
+                        <h5>Infomation:</h5>
+                        <p>1-333-345-6868</p>
+                        <p>support@bluedotauto.com</p>
+                      </div>
+                    </div>
+                </div>
                 <div className="widget-listing">
                   <div className="listing-header mb-30">
                     <h3>Recommended Used Cars</h3>
