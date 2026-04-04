@@ -5,8 +5,8 @@ import React from "react";
 import Link from "next/link";
 export const metadata = {
   title:
-    "Compare || AutoDeal - Car Dealer, Rental & Listing React Nextjs Template",
-  description: "AutoDeal - Car Dealer, Rental & Listing React Nextjs Template",
+    "Compare || BlueDotAutos - Car Dealer, Rental & Listing",
+  description: "BlueDotAutos - Car Dealer, Rental & Listing",
 };
 export default function page() {
   return (

@@ -8,8 +8,8 @@ import path from "path";
 import { transformCar } from "@/utils/transformCar";
 export const metadata = {
   title:
-    "Car Details 01 || AutoDeal - Car Dealer, Rental & Listing React Nextjs Template",
-  description: "AutoDeal - Car Dealer, Rental & Listing React Nextjs Template",
+    "Car Details 01 || BlueDotAutos - Car Dealer, Rental & Listing",
+  description: "BlueDotAutos - Car Dealer, Rental & Listing",
 };
 export default async function page({ params }) {
   const filePath = path.join(process.cwd(), "public", "assets", "cars.json");
