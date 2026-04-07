@@ -4,7 +4,6 @@ export default function Overview({ carItem = {} }) {
   const fields = [
     { label: "Condition:", value: "Used" },
     { label: "Cylinders:", value: carItem.cylinder ?? "N/A" },
-    { label: "VIN Number:", value: carItem.vin || "N/A" },
     { label: "Fuel Type:", value: carItem.fuelType || "N/A" },
     { label: "Doors:", value: carItem.door ?? "N/A" },
     { label: "Year:", value: carItem.year || "N/A" },

@@ -210,7 +210,7 @@ export default function Header2() {
                     </svg>
                   </div>
                   <p className="text-color-2">
-                    <a href="tel:8085550111">(808) 555-0111</a>
+                    <a href="tel:+14053635049">+1(405) 363-5049</a>
                   </p>
                 </li>
               </ul>

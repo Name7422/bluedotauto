@@ -523,11 +523,11 @@ export default function Cars1() {
                                   >
                                     View car
                                   </Link>
-                                  <a href="tel:13333456868" className="chat">
-                                    <span>1-333-345-6868</span>
+                                  <a href="tel:+14053635049" className="chat">
+                                    <span>+1(405) 363-5049</span>
                                   </a>
-                                  <a href="mailto:support@bluedotauto.com" className="chat">
-                                    <span>support@bluedotauto.com</span>
+                                  <a href="mailto:sales@bluedotauto.com" className="chat">
+                                    <span>sales@bluedotauto.com</span>
                                   </a>
                                 </div>
                               </div>

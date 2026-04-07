@@ -1,6 +1,6 @@
 export const slides = [
   {
-    imgSrc: "/assets/images/section/car-review.webp",
+    imgSrc: "/assets/images/section/car-review.avif",
     imgAlt: "2024 Hyundai Staria Premium Review",
     imgWidth: 1935,
     imgHeight: 631,

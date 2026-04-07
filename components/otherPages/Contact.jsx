@@ -59,7 +59,7 @@ export default function Contact() {
               <div id="comments" className="comments">
                 <div className="respond-comment">
                   <form
-                    action="mailto:support@bluedotauto.com"
+                    action="mailto:sales@bluedotauto.com"
                     method="post"
                     encType="text/plain"
                     id="loan-calculator"

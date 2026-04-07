@@ -4,7 +4,7 @@ export const teamMembers = [
     name: "Arlene McCoy",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team1.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -12,7 +12,7 @@ export const teamMembers = [
     name: "Ronald Richards",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team2.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -20,7 +20,7 @@ export const teamMembers = [
     name: "Leslie Alexander",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team3.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -28,7 +28,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team4.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -36,7 +36,7 @@ export const teamMembers = [
     name: "Arlene McCoy",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team5.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -44,7 +44,7 @@ export const teamMembers = [
     name: "Ronald Richards",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team6.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -52,7 +52,7 @@ export const teamMembers = [
     name: "Leslie Alexander",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team7.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -60,7 +60,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team8.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -68,7 +68,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team9.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -76,7 +76,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team10.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -84,7 +84,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team11.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
   {
@@ -92,7 +92,7 @@ export const teamMembers = [
     name: "Cody Fisher",
     position: "Administrative Staff",
     imageSrc: "/assets/images/img-box/team12.jpg",
-    phone: "0123456789",
+    phone: "+1(405) 363-5049",
     email: "themes@gmail",
   },
 ];

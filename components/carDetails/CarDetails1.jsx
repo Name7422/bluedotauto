@@ -1,12 +1,40 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Slider1 from "./sliders/Slider1";
 import Description from "./detailComponents/Description";
 import Overview from "./detailComponents/Overview";
 import CarInfo from "./detailComponents/CarInfo";
 import Recommended from "./detailComponents/Recommended";
 import SidebarToggleButton from "./SidebarToggleButton";
-import ContactUs from "../otherPages/ContactUs";
 export default function CarDetails1({ carItem, recommendedCars = [] }) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isContactModalOpen) {
+      return undefined;
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsContactModalOpen(false);
+      }
+    };
+
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = overflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isContactModalOpen]);
+
+  const mailtoSubject = encodeURIComponent(
+    `Inventory request: ${carItem?.title || "Vehicle inquiry"}`
+  );
+
   return (
     <>
       <section className="tf-section3 listing-detail style-1">
@@ -89,21 +117,29 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                   </div>
                 </div>
                 <div className="contact-info box-sd mb-40">
-                    <h2 className="mb-30">Contact Us</h2>
-                    <div className="wrap-info">
-                      <div className="box-info">
-                        <h5>Address</h5>
-                        <p>
-                          2330 S Robinson Ave, Oklahoma City, OK 73109 <br />
-                          United States
-                        </p>
-                      </div>
-                      <div className="box-info">
-                        <h5>Infomation:</h5>
-                        <p>1-333-345-6868</p>
-                        <p>support@bluedotauto.com</p>
-                      </div>
+                  <h2 className="mb-30">Contact Us</h2>
+                  <div className="wrap-info">
+                    <div className="box-info">
+                      <h5>Address</h5>
+                      <p>
+                        2330 S Robinson Ave, Oklahoma City, OK 73109 <br />
+                        United States
+                      </p>
                     </div>
+                    <div className="box-info">
+                      <h5>Infomation:</h5>
+                      <p>+1(405) 363-5049</p>
+                      <p>sales@bluedotauto.com</p>
+                    </div>
+                      <button
+                        type="button"
+                        className="sc-button"
+                        onClick={() => setIsContactModalOpen(true)}
+                      >
+                        <span>Check vehicle availability</span>
+                        <i className="icon-autodeal-next" />
+                      </button>
+                  </div>
                 </div>
                 <div className="widget-listing">
                   <div className="listing-header mb-30">
@@ -120,6 +156,158 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
           </div>
         </div>
       </section>
+      {isContactModalOpen ? (
+        <div
+          onClick={() => setIsContactModalOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(16, 24, 40, 0.7)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "24px",
+            zIndex: 1050,
+          }}
+        >
+          <div
+            className="comments"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inventory-contact-modal-title"
+            onClick={(event) => event.stopPropagation()}
+            style={{
+              width: "100%",
+              maxWidth: "760px",
+              maxHeight: "90vh",
+              overflowY: "auto",
+              backgroundColor: "#ffffff",
+              borderRadius: "24px",
+              padding: "32px",
+              boxShadow: "0 24px 80px rgba(15, 23, 42, 0.2)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+                gap: "16px",
+                marginBottom: "24px",
+              }}
+            >
+              <div>
+                <h2 id="inventory-contact-modal-title" className="mb-12">
+                  Search inventory
+                </h2>
+                <p className="text-color-2 mb-0">
+                  Leave your details and your email client will open a prepared
+                  message for {carItem?.title || "this vehicle"}.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsContactModalOpen(false)}
+                aria-label="Close contact form"
+                style={{
+                  border: "0",
+                  background: "transparent",
+                  fontSize: "28px",
+                  lineHeight: 1,
+                  color: "#111827",
+                }}
+              >
+                ×
+              </button>
+            </div>
+            <div className="respond-comment">
+              <form
+                action={`mailto:sales@bluedotauto.com?subject=${mailtoSubject}`}
+                method="post"
+                encType="text/plain"
+                className="comment-form form-submit"
+              >
+                <div className="grid-sw-2">
+                  <fieldset className="email-wrap style-text">
+                    <label className="font-1 fs-14 fw-5">Name</label>
+                    <input
+                      type="text"
+                      className="tb-my-input"
+                      name="name"
+                      placeholder="Your name"
+                      required
+                    />
+                  </fieldset>
+                  <fieldset className="phone-wrap style-text">
+                    <label className="font-1 fs-14 fw-5">Email address</label>
+                    <input
+                      type="email"
+                      className="tb-my-input"
+                      name="email"
+                      placeholder="Your email"
+                      required
+                    />
+                  </fieldset>
+                </div>
+                <div className="grid-sw-2">
+                  <fieldset className="email-wrap style-text">
+                    <label className="font-1 fs-14 fw-5">Phone number</label>
+                    <input
+                      type="tel"
+                      className="tb-my-input"
+                      name="phone"
+                      placeholder="Phone number"
+                      required
+                    />
+                  </fieldset>
+                  <fieldset className="phone-wrap style-text">
+                    <label className="font-1 fs-14 fw-5">Vehicle</label>
+                    <input
+                      type="text"
+                      className="tb-my-input"
+                      name="vehicle"
+                      defaultValue={carItem?.title || ""}
+                      readOnly
+                    />
+                  </fieldset>
+                </div>
+                <fieldset className="phone-wrap style-text">
+                  <label className="font-1 fs-14 fw-5">Your message</label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder="Tell us what you are looking for"
+                    aria-required="true"
+                    defaultValue={`Hello, I am interested in ${carItem?.title || "this vehicle"}. Please share available inventory and next steps.`}
+                    required
+                  />
+                </fieldset>
+                <div
+                  className="button-boxs"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <button className="sc-button" type="submit">
+                    <span>Send</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="sc-button"
+                    onClick={() => setIsContactModalOpen(false)}
+                    style={{ backgroundColor: "#e5e7eb", color: "#111827" }}
+                  >
+                    <span>Cancel</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      ) : null}
       <SidebarToggleButton />
     </>
   );

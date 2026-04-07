@@ -5,7 +5,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -14,7 +14,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -23,7 +23,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -32,7 +32,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -41,7 +41,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -50,7 +50,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -59,7 +59,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -68,7 +68,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -77,7 +77,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
   {
@@ -86,7 +86,7 @@ export const dealerData = [
     title: "BlueDotAutos select",
     reviews: 2975,
     rating: 5,
-    phone: "(217) 555-0***",
+    phone: "+1(405) 363-5049",
     address: "2330 S Robinson Ave, Oklahoma City, OK 73109",
   },
 ];

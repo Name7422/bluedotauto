@@ -16,8 +16,8 @@ export default function ContactUs() {
                   </div>
                   <div className="box-info">
                     <h5>Infomation:</h5>
-                    <p>1-333-345-6868</p>
-                    <p>support@bluedotauto.com</p>
+                    <p>+1(405) 363-5049</p>
+                    <p>sales@bluedotauto.com</p>
                   </div>
                   <div className="box-info">
                     <h5>Opentime:</h5>

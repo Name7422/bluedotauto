@@ -66,7 +66,7 @@ export default function Footer1() {
                 </div>
                 <div className="tf-collapse-content">
                   <form
-                    action="mailto:support@bluedotauto.com"
+                    action="mailto:sales@bluedotauto.com"
                     method="post"
                     encType="text/plain"
                     className="comment-form form-submit"
