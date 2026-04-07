@@ -21,8 +21,8 @@ export default function ContactUs() {
                   </div>
                   <div className="box-info">
                     <h5>Opentime:</h5>
-                    <p>Monay - Friday: 08:00 - 20:00</p>
-                    <p>Saturday - Sunday: 10:00 - 18:00</p>
+                    <p>Monday - Saturday: 9:30 AM - 6:00 PM</p>
+                    <p>Sunday: Closed</p>
                   </div>
                   <div className="box-info">
                     <h5>Follow Us:</h5>

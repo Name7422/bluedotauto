@@ -8,7 +8,7 @@ import path from "path";
 import { transformCar } from "@/utils/transformCar";
 export const metadata = {
   title:
-    "Car Details 01 || BlueDotAutos - Car Dealer, Rental & Listing",
+    "Car Details || BlueDotAutos - Car Dealer, Rental & Listing",
   description: "BlueDotAutos - Car Dealer, Rental & Listing",
 };
 export default async function page({ params }) {

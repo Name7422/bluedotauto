@@ -1,5 +1,5 @@
 export const slides = [
-  { imgSrc: "/assets/images/slider/slider1.webp" },
+  { imgSrc: "/assets/images/slider/slide1.jpg" },
   { imgSrc: "/assets/images/slider/slide2.jpg" },
 ];
 
