@@ -22,7 +22,7 @@ export const toggleItems = [
   {
     title: "How does delivery work?",
     content:
-      "We provide personal delivery from our Eagle Pass, TX showroom. The first 250 miles are free; beyond that, enclosed trailer delivery is available at $1 per mile.",
+      "We provide personal delivery from our 2330 S Robinson Ave, Oklahoma City, OK showroom. The first 250 miles are free; beyond that, enclosed trailer delivery is available at $1 per mile.",
   },
   {
     title: "What is your return policy?",
