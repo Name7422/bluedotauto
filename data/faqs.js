@@ -1,13 +1,13 @@
 export const toggleItems = [
   {
-    title: "What types of classic cars do you offer?",
+    title: "What types of used cars do you offer?",
     content:
-      "We specialize in American classic cars, including muscle cars, vintage luxury models, and rare collectibles. Our inventory is updated regularly.",
+      "We specialize in American used cars, including muscle cars, vintage luxury models, and rare collectibles. Our inventory is updated regularly.",
   },
   {
     title: "Do you accept trade-ins?",
     content:
-      "No, we do not accept trade-ins. However, we’re happy to recommend trusted ways to sell your classic independently.",
+      "No, we do not accept trade-ins. However, we’re happy to recommend trusted ways to sell your used car independently.",
   },
   {
     title: "Do you offer financing options?",
@@ -17,7 +17,7 @@ export const toggleItems = [
   {
     title: "Do you provide vehicle history reports?",
     content:
-      "Yes, we provide comprehensive vehicle history reports for all our classic cars. These reports include information on previous ownership, accident history, and maintenance records to help you make an informed decision.",
+      "Yes, we provide comprehensive vehicle history reports for all our used cars. These reports include information on previous ownership, accident history, and maintenance records to help you make an informed decision.",
   },
   {
     title: "How does delivery work?",
@@ -40,7 +40,7 @@ export const toggleItems = [
       "Payment methods are flexible and arranged directly with our sales team for convenience and security.",
   },
   {
-    title: "Do you offer any warranties on classic cars?",
+    title: "Do you offer any warranties on used cars?",
     content:
       "Most cars are sold as-is, but select vehicles may qualify for third-party extended coverage. Ask our team for details.",
   },
