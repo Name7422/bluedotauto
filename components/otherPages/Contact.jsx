@@ -1,8 +1,54 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import ContactUs from "./ContactUs";
 
 export default function Contact() {
+  const formRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState({ type: "idle", message: "" });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!formRef.current || isSubmitting) return;
+
+    const formData = new FormData(formRef.current);
+    const body = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      tel: formData.get("tel"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    setIsSubmitting(true);
+    setSubmitState({ type: "idle", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Unknown error");
+
+      formRef.current.reset();
+      setSubmitState({
+        type: "success",
+        message: "Your message has been sent. We will get back to you shortly.",
+      });
+    } catch (error) {
+      setSubmitState({
+        type: "error",
+        message: error.message || "We could not send your message right now. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <section className="flat-property">
@@ -59,9 +105,8 @@ export default function Contact() {
               <div id="comments" className="comments">
                 <div className="respond-comment">
                   <form
-                    action="mailto:sales@bluedotauto.com"
-                    method="post"
-                    encType="text/plain"
+                    ref={formRef}
+                    onSubmit={handleSubmit}
                     id="loan-calculator"
                     className="comment-form form-submit"
                   >
@@ -127,10 +172,26 @@ export default function Contact() {
                       />
                     </fieldset>
                     <div className="button-boxs">
-                      <button className="sc-button" name="submit" type="submit">
-                        <span>Send Message</span>
+                      <button
+                        className="sc-button"
+                        name="submit"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
+                        <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                       </button>
                     </div>
+                    {submitState.message ? (
+                      <p
+                        className="mt-16"
+                        style={{
+                          color:
+                            submitState.type === "success" ? "#198754" : "#dc3545",
+                        }}
+                      >
+                        {submitState.message}
+                      </p>
+                    ) : null}
                   </form>
                 </div>
               </div>
