@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Slider1 from "./sliders/Slider1";
 import Description from "./detailComponents/Description";
 import Overview from "./detailComponents/Overview";
@@ -8,7 +8,11 @@ import CarInfo from "./detailComponents/CarInfo";
 import Recommended from "./detailComponents/Recommended";
 import SidebarToggleButton from "./SidebarToggleButton";
 export default function CarDetails1({ carItem, recommendedCars = [] }) {
+  const [openForm, setOpenForm] = useState(true);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const formRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState({ type: "idle", message: "" });
 
   useEffect(() => {
     if (!isContactModalOpen) {
@@ -31,9 +35,48 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
     };
   }, [isContactModalOpen]);
 
-  const mailtoSubject = encodeURIComponent(
-    `Inventory request: ${carItem?.title || "Vehicle inquiry"}`
-  );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!formRef.current || isSubmitting) return;
+    const formData = new FormData(formRef.current);
+    const body = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      tel: formData.get("tel"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    setIsSubmitting(true);
+    setSubmitState({ type: "idle", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Unknown error");
+
+      formRef.current.reset();
+      setSubmitState({
+        type: "success",
+        message: "Your message has been sent. We will get back to you shortly.",
+      });
+      setOpenForm(false);
+    } catch (error) {
+      setOpenForm(true);
+      setSubmitState({
+        type: "error",
+        message: error.message || "We could not send your message right now. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -131,14 +174,14 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                       <p>+1(405) 363-5049</p>
                       <p>sales@bluedotauto.com</p>
                     </div>
-                      <button
-                        type="button"
-                        className="sc-button"
-                        onClick={() => setIsContactModalOpen(true)}
-                      >
-                        <span>Check vehicle availability</span>
-                        <i className="icon-autodeal-next" />
-                      </button>
+                    <button
+                      type="button"
+                      className="sc-button"
+                      onClick={() => setIsContactModalOpen(true)}
+                    >
+                      <span>Check vehicle availability</span>
+                      <i className="icon-autodeal-next" />
+                    </button>
                   </div>
                 </div>
                 <div className="widget-listing">
@@ -221,10 +264,41 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
               </button>
             </div>
             <div className="respond-comment">
-              <form
-                action={`mailto:sales@bluedotauto.com?subject=${mailtoSubject}`}
-                method="post"
-                encType="text/plain"
+              {!openForm ? (
+                <>
+                  <div
+                    className="mt-16"
+                    style={{
+                      background: "#e6f9f0",
+                      border: "1px solid #198754",
+                      borderRadius: "12px",
+                      padding: "16px 20px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                    }}
+                  >
+                    <span style={{ fontSize: "20px" }}>✅</span>
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "#198754",
+                        fontWeight: "500",
+                        fontSize: "15px",
+                      }}
+                    >
+                      Thank you for your message. We will get back to you soon.
+                    </p>
+                  </div>
+                  <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}} className="button-boxs">
+                    <button style={{ margin: "30px", border:"none" }} className="sc-button" onClick={() => setOpenForm(true)}><span>Send Another Message</span></button>
+                  </div>
+                </>
+              ) : (
+                <form
+                ref={formRef}
+                onSubmit={handleSubmit}
                 className="comment-form form-submit"
               >
                 <div className="grid-sw-2">
@@ -255,7 +329,7 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                     <input
                       type="tel"
                       className="tb-my-input"
-                      name="phone"
+                      name="tel"
                       placeholder="Phone number"
                       required
                     />
@@ -265,7 +339,7 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                     <input
                       type="text"
                       className="tb-my-input"
-                      name="vehicle"
+                      name="subject"
                       defaultValue={carItem?.title || ""}
                       readOnly
                     />
@@ -304,6 +378,7 @@ export default function CarDetails1({ carItem, recommendedCars = [] }) {
                   </button>
                 </div>
               </form>
+                )}
             </div>
           </div>
         </div>
