@@ -337,26 +337,18 @@
   }
 
   .listing-sidebar {
-    margin-top: 0px;
-    position: fixed;
-    height: 100%;
-    left: -100%;
-    top: 0;
-    z-index: 99;
-    max-width: 320px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px 0px;
-    overflow: scroll;
-    transition: all 0.3s ease-in-out;
-
-    &.open {
-      left: 0%;
-    }
+    position: static;
+    height: auto;
+    left: auto;
+    top: auto;
+    z-index: auto;
+    max-width: 100%;
+    overflow: visible;
+    box-shadow: none;
   }
 
   .btn-siderbar-mobie-filter {
-    display: flex;
+    display: none;
   }
 
   .tf-team.box .content {
