@@ -16,7 +16,7 @@ export default function Overview({ carItem = {} }) {
       label: "Mileage:",
       value:
         carItem.km != null
-          ? `${Number(carItem.km).toLocaleString()} km`
+          ? `${Number(carItem.km).toLocaleString()} mi`
           : "N/A",
     },
   ];

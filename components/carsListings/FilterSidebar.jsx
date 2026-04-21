@@ -106,7 +106,7 @@ export default function FilterSidebar({ allProps, clearFilter, filterOpts = { ma
                   <div className="caption flex-two">
                     <div>
                       <span className="fw-6">
-                        KM: {allProps.km[0].toLocaleString()} km - {allProps.km[1].toLocaleString()} km
+                        Miles: {allProps.km[0].toLocaleString()} mi - {allProps.km[1].toLocaleString()} mi
                       </span>
                     </div>
                   </div>

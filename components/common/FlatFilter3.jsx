@@ -174,7 +174,7 @@ export default function FlatFilter3({
                     <div className="caption flex-two">
                       <div>
                         <span className="fw-6">
-                          KM: {allProps.km[0]} km - {allProps.km[1]} km
+                          Miles: {allProps.km[0]} mi - {allProps.km[1]} mi
                         </span>
                       </div>
                     </div>

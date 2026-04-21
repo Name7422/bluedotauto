@@ -266,7 +266,7 @@ export default function ListingMap() {
                     <div className="flex flex-wrap gap-8">
                       <p className="location">
                         <i className="icon-autodeal-km1" />
-                        {getLocation.km.toLocaleString()} kms
+                        {getLocation.km.toLocaleString()} mi
                       </p>
                       <p className="location">
                         <i className="icon-autodeal-diesel" />

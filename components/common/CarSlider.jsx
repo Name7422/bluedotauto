@@ -180,7 +180,7 @@ export default function CarSlider() {
                             <div className="icon-box flex flex-wrap">
                               <div className="icons flex-three">
                                 <i className="icon-autodeal-km1" />
-                                <span>{elm.km.toLocaleString()} kms</span>
+                                <span>{elm.km.toLocaleString()} mi</span>
                               </div>
                               <div className="icons flex-three">
                                 <i className="icon-autodeal-diesel" />

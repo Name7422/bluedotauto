@@ -301,7 +301,7 @@ export default function Cars1() {
                           <div className="caption flex-two">
                             <div>
                               <span className="fw-6">
-                                KM: {km[0].toLocaleString()} km - {km[1].toLocaleString()} km
+                                Miles: {km[0].toLocaleString()} mi - {km[1].toLocaleString()} mi
                               </span>
                             </div>
                           </div>
@@ -492,7 +492,7 @@ export default function Cars1() {
                                 <div className="icon-box flex flex-wrap">
                                   <div className="icons flex-three">
                                     <i className="icon-autodeal-km1" />
-                                    <span>{car.km.toLocaleString()} kms</span>
+                                    <span>{car.km.toLocaleString()} mi</span>
                                   </div>
                                   <div className="icons flex-three">
                                     <i className="icon-autodeal-diesel" />

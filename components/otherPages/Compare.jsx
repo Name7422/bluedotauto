@@ -168,11 +168,11 @@ export default function Compare() {
                     <li>Petrol</li>
                     <li>Petrol</li>
                   </ul>
-                  <div className="title-tr">Kms Driven</div>
+                  <div className="title-tr">Miles Driven</div>
                   <ul className="group-tr">
-                    <li>22,737 Kms</li>
-                    <li>28,937 Kms</li>
-                    <li>17,730 Kms</li>
+                    <li>22,737 mi</li>
+                    <li>28,937 mi</li>
+                    <li>17,730 mi</li>
                   </ul>
                   <div className="title-tr">Ownership</div>
                   <ul className="group-tr">

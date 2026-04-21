@@ -291,7 +291,7 @@ export default function FlatFilter({
                       <div className="caption flex-two">
                         <div>
                           <span className="fw-6">
-                            kms: {km[0].toLocaleString()} - {km[1].toLocaleString()} kms
+                            Miles: {km[0].toLocaleString()} - {km[1].toLocaleString()} mi
                           </span>
                         </div>
                       </div>

@@ -6,7 +6,7 @@ export default function CarInfo({ carItem }) {
       <div className="icon-box flex flex-wrap">
         <div className="icons flex-three">
           <i className="icon-autodeal-km1" />
-          <span>{carItem.km.toLocaleString()} kms</span>
+          <span>{carItem.km.toLocaleString()} mi</span>
         </div>
         <div className="icons flex-three">
           <i className="icon-autodeal-diesel" />
